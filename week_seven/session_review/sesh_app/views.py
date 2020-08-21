@@ -13,6 +13,7 @@ def start_game(request):
 def process(request):
     print(request.POST, "This is my form data queryset")
     request.session['user_list'].append(request.POST['username'])
+    request.session['modified'] = True
     print(request.session['user_list'], "this is my list in session")
     return redirect('/view_user')
 
